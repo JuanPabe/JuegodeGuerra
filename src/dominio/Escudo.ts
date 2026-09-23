@@ -6,6 +6,7 @@ export class Escudo {
 	}
 
 	reducirDaño(daño: number): number {
-		return daño * (1 - this.porcentajeReduccion / 100);
+		const dañoReducido = daño * (1 - this.porcentajeReduccion / 100);
+		return Math.max(0, Math.ceil(dañoReducido));
 	}
 }
